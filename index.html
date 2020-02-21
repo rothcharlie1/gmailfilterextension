@@ -234,9 +234,9 @@
         //console.log(keys)
         
         try {
-          CollegeID = labels['College'];
+          window.CollegeID = labels['College'];
           console.log('Label Exists');
-          console.log(CollegeID)
+          console.log(window.CollegeID)
         } catch {
           createLabel('me', 'College', rando);
           console.log('Label Created');
