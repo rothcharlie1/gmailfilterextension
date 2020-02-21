@@ -33,7 +33,7 @@
       var idList = [];
       var CollegeID = "";
       var SavedID = {};
-      var College = false;
+      // var College = false;
 
       var searchTerm = 'from:.edu';
 
@@ -228,25 +228,36 @@
 
         //var keys = Object.keys(labels)
         //console.log(keys)
-        for(var key in labels) {
-          console.log(key)
-          if (key == "College") {
-            College = true;
-            CollegeID = labels[key];
-            console.log('found a label named college')
-            break;
-          }
-        }
+        
+        try {
+          CollegeID = labels['College']
 
-        if (College == false) {
-          console.log("Lable Created");
-          createLabel(userId = "me", newLabelName = "College");
-          // college_label();
-        } else {
-          console.log("Label Exists");
+        } catch {
+          createLabel(userId = 'me', newLabelName = 'College')
+          college_label();
         }
+        
+        
+        
+      //   for(var key in labels) {
+      //     console.log(key)
+      //     if (key == "College") {
+      //       College = true;
+      //       CollegeID = labels[key];
+      //       console.log('found a label named college')
+      //       break;
+      //     }
+      //   }
 
-      }
+      //   if (College == false) {
+      //     console.log("Lable Created");
+      //     createLabel(userId = "me", newLabelName = "College");
+      //     // college_label();
+      //   } else {
+      //     console.log("Label Exists");
+      //   }
+
+      // }
 
     </script>
 
