@@ -77,8 +77,7 @@
           signoutButton.style.display = 'block';
           listLabels();
           listMessages('me', searchTerm);
-          lastResult = result[1];
-          console.log(lastResult);
+          
         } else {
           authorizeButton.style.display = 'block';
           signoutButton.style.display = 'none';
@@ -133,7 +132,11 @@
           }
         });
       }
-
+      
+      function logResult(result) {
+          console.log(result);
+          console.log(result.length)
+      }
         /**
      * Retrieve Messages in user's mailbox matching query.
      *
@@ -155,8 +158,10 @@
                 'q': query
                 });
                 getPageOfMessages(request, result);
+            
             } else {
                 console.log('out of messages')
+                logResult(result);
             }
             });
         };
@@ -164,11 +169,10 @@
             'userId': userId,
             'q': query
         });
+        console.log(getPageOfMessages.result)
         getPageOfMessages(initialRequest, [])
         }
-      
 
-      
       /**
       * Modify the Labels a Message is associated with.
       *
