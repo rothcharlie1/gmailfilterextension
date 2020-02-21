@@ -140,6 +140,7 @@
             appendPre('No Labels found.');
           }
         });
+        return labelNames;
       }
      /* 
       function changeLabel(result) {
@@ -222,16 +223,16 @@
       }
 
       function college_label() {
-        listLabels();
-        
+        var labels = listLabels();
+        console.log(labels)
 
-        var keys = Object.keys(labelNames)
-        console.log(keys)
-        for(var key of keys) {
+        //var keys = Object.keys(labels)
+        //console.log(keys)
+        for(var key in labels) {
           console.log(key)
           if (key == "College") {
             College = true;
-            CollegeID = labelNames[key];
+            CollegeID = labels[key];
             console.log('found a label named college')
             break;
           }
