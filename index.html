@@ -223,9 +223,12 @@
 
       function college_label() {
         listLabels();
+        
 
-        for(var key in labelNames) {
-          conosle.log(key)
+        var keys = Object.keys(labelNames)
+        console.log(keys)
+        for(var key of keys) {
+          console.log(key)
           if (key == "College") {
             College = true;
             CollegeID = labelNames[key];
