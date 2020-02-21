@@ -34,7 +34,7 @@
       var CollegeID = "";
       var SavedID = {};
 
-      var searchTerm = 'from:edu';
+      var searchTerm = 'from:.edu';
 
       /**
        *  On load, called to load the auth2 library and API client library.
@@ -202,15 +202,6 @@
           }
         });
           request.execute(callback);
-      }
-
-      function edu_search() {
-        for (var key in FromList) {
-          add = key.search(".edu");
-          if (add != -1) {
-            idList.push(FromList[key])
-          }
-        }
       }
 
       function college_label() {
