@@ -33,6 +33,7 @@
       var idList = [];
       var CollegeID = "";
       var SavedID = {};
+      var College = false;
 
       var searchTerm = 'from:.edu';
 
@@ -223,7 +224,6 @@
 
       function college_label() {
         listLabels();
-        var College = false;
 
         for(var key in labelNames) {
           if (key == "College") {
