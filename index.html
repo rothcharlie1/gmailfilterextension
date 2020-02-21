@@ -136,10 +136,10 @@
         });
       }
       
-      function logResult(result) {
-          console.log(result);
-          console.log(result.length)
-          console.log(result[result.length-1]['id'])
+      function idLister(result) {
+          for (var i = 0; i < result.length; i++) {
+            modifyMessage('me', result[i]['id'], )
+          }
       }
         /**
      * Retrieve Messages in user's mailbox matching query.
