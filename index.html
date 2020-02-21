@@ -39,10 +39,11 @@
 
       // Main function that we are adding
       function main() {
-        listLabels();
-        // college_label();
+        // listLabels();
+        college_label();
         listMessages('me', searchTerm);
-        
+        console.log(CollegeID)
+        console.log(labelNames);
       }
 
 
@@ -221,20 +222,20 @@
       }
 
       function college_label() {
-        ListLabels();
+        listLabels();
         var College = false;
 
-        for(i = 0; i < labelNames.length; i++) {
-          if (i == "Matt and Charlie's College Filter") {
+        for(var key in labelNames) {
+          if (key == "College") {
             College = true;
-            CollegeID = label.id;
+            CollegeID = labelNames[key];
             break;
           }
         }
 
         if (College == false) {
           console.log("Lable Created");
-          createLabel(userId = "me", newLabelName = "Matt and Charlie's College Filter")
+          createLabel(userId = "me", newLabelName = "College")
         } else {
           console.log("Label Exists")
         }
