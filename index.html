@@ -189,14 +189,14 @@
       * @param  {Array} labelsToRemove Array of Labels to remove.
       * @param  {Function} callback Function to call when the request is complete.
       */
-      function modifyMessage(userId, messageId, labelsToAdd, labelsToRemove, callback) {
+      function modifyMessage(userId, messageId, labelsToAdd, labelsToRemove) {
         var request = gapi.client.gmail.users.messages.modify({
           'userId': userId,
           'id': messageId,
           'addLabelIds': labelsToAdd,
           'removeLabelIds': labelsToRemove
         });
-        request.execute(callback);
+        // request.execute(callback);
       }
       
       /**
