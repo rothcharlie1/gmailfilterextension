@@ -36,6 +36,7 @@
 
       var searchTerm = 'from:.edu';
 
+
       /**
        *  On load, called to load the auth2 library and API client library.
        */
@@ -76,6 +77,8 @@
           signoutButton.style.display = 'block';
           listLabels();
           listMessages('me', searchTerm);
+          lastResult = result[1];
+          console.log(lastResult);
         } else {
           authorizeButton.style.display = 'block';
           signoutButton.style.display = 'none';
@@ -143,7 +146,7 @@
         var getPageOfMessages = function(request, result) {
             request.execute(function(resp) {
             result = result.concat(resp.messages);
-            console.log(result);
+            
             var nextPageToken = resp.nextPageToken;
             if (nextPageToken) {
                 request = gapi.client.gmail.users.messages.list({
