@@ -122,7 +122,8 @@
           if (labels && labels.length > 0) {
             for (i = 0; i < labels.length; i++) {
               var label = labels[i];
-              appendPre(label.name)
+              labelNames.push(label.name);
+              appendPre(label.name);
             }
           } else {
             appendPre('No Labels found.');
@@ -212,6 +213,11 @@
         }
       }
 
+      function college_label() {
+        ListLabels();
+        var College = false;
+
+      }
 
     </script>
 
