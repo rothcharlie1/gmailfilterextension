@@ -230,10 +230,12 @@
         //console.log(keys)
         
         try {
-          CollegeID = labels['College']
-          console.log(CollegeID);
+          CollegeID = labels['College'];
+          console.log('Label Exists');
+
         } catch {
-          createLabel(userId = 'me', newLabelName = 'College')
+          createLabel(userId = 'me', newLabelName = 'College');
+          console.log('Label Created');
           college_label();
         }
         
