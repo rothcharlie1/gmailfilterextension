@@ -29,7 +29,7 @@
       var signoutButton = document.getElementById('signout_button');
 
       var FromList = {};
-      var labelNames = [];
+      var labelNames = {};
       var idList = [];
       var CollegeID = "";
       var SavedID = {};
@@ -131,7 +131,10 @@
           if (labels && labels.length > 0) {
             for (i = 0; i < labels.length; i++) {
               var label = labels[i];
-              labelNames.push(label.id);
+              labelNames.push({
+                key: label.name,
+                value: label.id
+              });
               appendPre(label.id);
             }
           } else {
@@ -226,6 +229,7 @@
         for(i = 0; i < labelNames.length; i++) {
           if (i == "Matt and Charlie's College Filter") {
             College = true;
+            CollegeID = label.id;
             break;
           }
         }
