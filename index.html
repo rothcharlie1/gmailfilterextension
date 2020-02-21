@@ -201,19 +201,33 @@
       * @param  {String} newLabelName Name of the new Label.
       * @param  {Function} callback Function to call when the request is complete.
       */
-      function createLabel(userId, newLabelName, callback) {
+      function createLabel(userId, newLabelName) {
         var request = gapi.client.gmail.users.labels.create({
           'userId': userId,
           'label': {
             'name': newLabelName
           }
         });
-          request.execute(callback);
+          // request.execute(callback);
       }
 
       function college_label() {
         ListLabels();
         var College = false;
+
+        for(i = 0; i < labelNames.length; i++) {
+          if (i == "Matt and Charlie's College Filter") {
+            College = true;
+            break;
+          }
+        }
+
+        if (College == false) {
+          console.log("Lable Created");
+          createLabel(userId = "me", newLabelName = "Matt and Charlie's College Filter")
+        } else {
+          console.log("Label Exists")
+        }
 
       }
 
