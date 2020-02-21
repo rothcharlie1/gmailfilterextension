@@ -120,6 +120,45 @@
           }
         });
       }
+      
+      /**
+      * Modify the Labels a Message is associated with.
+      *
+      * @param  {String} userId User's email address. The special value 'me'
+      * can be used to indicate the authenticated user.
+      * @param  {String} messageId ID of Message to modify.
+      * @param  {Array} labelsToAdd Array of Labels to add.
+      * @param  {Array} labelsToRemove Array of Labels to remove.
+      * @param  {Function} callback Function to call when the request is complete.
+      */
+      function modifyMessage(userId, messageId, labelsToAdd, labelsToRemove, callback) {
+        var request = gapi.client.gmail.users.messages.modify({
+          'userId': userId,
+          'id': messageId,
+          'addLabelIds': labelsToAdd,
+          'removeLabelIds': labelsToRemove
+        });
+        request.execute(callback);
+      }
+      
+      /**
+      * Add a new Label to user's mailbox.
+      *
+      * @param  {String} userId User's email address. The special value 'me'
+      * can be used to indicate the authenticated user.
+      * @param  {String} newLabelName Name of the new Label.
+      * @param  {Function} callback Function to call when the request is complete.
+      */
+      function createLabel(userId, newLabelName, callback) {
+        var request = gapi.client.gmail.users.labels.create({
+          'userId': userId,
+          'label': {
+            'name': newLabelName
+          }
+        });
+          request.execute(callback);
+      }
+
 
     </script>
 
