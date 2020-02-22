@@ -32,8 +32,11 @@ function main() {
   college_label();
   listMessages('me', searchTerm);
   console.log(labelNames);
-  CollegeID = labelNames['INBOX'];
+  console.log(labelNames['College']);
+  CollegeID = labelNames.INBOX;
   console.log(CollegeID);
+  console.log(test)
+  console.log(test.name);
 
 }
 
@@ -227,7 +230,8 @@ function college_label() {
   var labelArray = listLabels();
   CollegeID = labelArray['College']
   console.log(labelArray);
-  //var keys = Object.keys(labels)
+  var keys = Object.keys(labelArray)
+  console.log(keys)
   //console.log(keys)
   
   // try {
