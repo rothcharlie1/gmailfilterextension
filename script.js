@@ -26,7 +26,7 @@ var searchTerm = 'from:.edu';
 function main() {
   // listLabels();
   college_label();
-  listMessages('me', searchTerm);
+  console.log(listMessages('me', searchTerm));
   console.log(CollegeID)
   console.log(labelNames);
 }
@@ -157,7 +157,7 @@ function listMessages(userId, query) {
       
       } else {
           console.log('out of messages')
-          //changeLabel(result);
+          return result;
       }
       });
   };
@@ -166,7 +166,8 @@ function listMessages(userId, query) {
       'q': query
   });
   getPageOfMessages(initialRequest, []);
-  }
+  return getPageOfMessages.result;
+}
 
 /**
 * Modify the Labels a Message is associated with.
@@ -197,7 +198,9 @@ function createLabel(userId, newLabelName) {
   var request = gapi.client.gmail.users.labels.create({
     'userId': userId,
     'label': {
-      'name': newLabelName
+      'name': newLabelName,
+      'labelListVisibility': 'labelShow',
+      'messageListVisibility': 'show'
     }
   });
   request.execute();
@@ -225,23 +228,23 @@ function college_label() {
   
   
   
-  for(var key in labelArray) {
-    console.log('hello');
-    console.log(key);
-    if (key == "College") {
-      window.College = true;
-      CollegeID = labelArray[key];
-      console.log('found a label named college');
-      break;
-    }
-  }
+  // for(var key in labelArray) {
+  //   console.log('hello');
+  //   console.log(key);
+  //   if (key == "College") {
+  //     window.College = true;
+  //     CollegeID = labelArray[key];
+  //     console.log('found a label named college');
+  //     break;
+  //   }
+  // }
 
-  if (window.College == false) {
-    createLabel("me","College");
-    console.log("Lable Created");
-    // college_label();
-  } else {
-    console.log("Label Exists");
-  }
+  // if (window.College == false) {
+  //   createLabel("me","College");
+  //   console.log("Lable Created");
+  //   // college_label();
+  // } else {
+  //   console.log("Label Exists");
+  // }
 
 }
