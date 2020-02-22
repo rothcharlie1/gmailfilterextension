@@ -29,11 +29,11 @@ var searchTerm = 'from:.edu';
 // Main function that we are adding
 function main() {
   listLabels();
-  college_label();
+  // college_label();
   console.log(listMessages('me', searchTerm));
   console.log(labelNames);
   console.log(labelNames['College']);
-  CollegeID = labelNames.INBOX;
+  CollegeID = labelNames.College;
   console.log(CollegeID);
   console.log(test)
   console.log(test.name);
