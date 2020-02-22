@@ -206,14 +206,14 @@ function createLabel(userId, newLabelName, callback) {
   request.execute(callback);
 }
 
-function rando() {
+function cb() {
     console.log('callback worked');
 }
 
 function college_label() {
   var labels = listLabels();
   console.log(labels)
-
+  createLabel('me', 'test', cb);
   //var keys = Object.keys(labels)
   //console.log(keys)
   
@@ -222,7 +222,7 @@ function college_label() {
     console.log('Label Exists');
     console.log(window.CollegeID)
   } catch {
-    createLabel('me', 'College', rando);
+    createLabel('me', 'College', cb);
     console.log('Label Created');
     college_label();
   }
