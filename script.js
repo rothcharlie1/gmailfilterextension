@@ -185,7 +185,7 @@ function modifyMessage(userId, messageId, labelsToAdd, labelsToRemove) {
     'addLabelIds': labelsToAdd,
     'removeLabelIds': labelsToRemove
   });
-  // request.execute(callback);
+  request.execute(); // You might have to comment this out, we are figuring it out
 }
 
 /**
