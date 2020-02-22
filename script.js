@@ -28,7 +28,7 @@ var searchTerm = 'from:.edu';
 
 // Main function that we are adding
 function main() {
-  // listLabels();
+  listLabels();
   college_label();
   console.log(listMessages('me', searchTerm));
   console.log(labelNames);
@@ -166,7 +166,7 @@ function listMessages(userId, query) {
       
       } else {
           console.log('out of messages')
-          return result;
+          logResult(result);
       }
       });
   };
@@ -175,9 +175,16 @@ function listMessages(userId, query) {
       'q': query
   });
   getPageOfMessages(initialRequest, []);
-  return getPageOfMessages.result;
 }
 
+function logResult(result) {
+  console.log(labelNames['College']);
+  console.log(result);
+  console.log(result['length']);
+  for (var i = 0; i < result['length']; i++) {
+    modifyMessage('me', result[i]['id'], labelNames['College'], 'INBOX');
+  }
+}
 /**
 * Modify the Labels a Message is associated with.
 *
