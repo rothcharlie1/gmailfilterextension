@@ -182,7 +182,7 @@ function logResult(result) {
   console.log(result);
   console.log(result['length']);
   for (var i = 0; i < result['length']; i++) {
-    modifyMessage('me', result[i]['id'], labelNames['College'], 'INBOX');
+    //modifyMessage('me', result[i]['id'], labelNames['College'], 'INBOX');
   }
 }
 /**
