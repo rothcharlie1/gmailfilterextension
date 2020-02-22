@@ -230,6 +230,7 @@ function college_label() {
   
   
   for(var key in labelArray) {
+    console.log('hello')
     console.log(key)
     if (key == "College") {
       window.College = true;
