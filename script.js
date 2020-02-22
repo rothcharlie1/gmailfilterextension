@@ -30,12 +30,10 @@ var searchTerm = 'from:.edu';
 function main() {
   listLabels();
   college_label();
-  console.log(listMessages('me', searchTerm));
+  listMessages('me', searchTerm);
   console.log(labelNames);
-  CollegeID = labelNames.INBOX;
+  CollegeID = labelNames['INBOX'];
   console.log(CollegeID);
-  console.log(test.name);
-  console.log(test);
 
 }
 
@@ -181,7 +179,7 @@ function logResult(result) {
   console.log(result);
   console.log(result['length']);
   for (var i = 0; i < result['length']; i++) {
-    modifyMessage('me', result[i]['id'], labelNames['College'], 'INBOX');
+    //modifyMessage('me', result[i]['id'], labelNames['College'], 'INBOX');
   }
 }
 /**
