@@ -206,14 +206,14 @@ function createLabel(userId, newLabelName, callback) {
   request.execute(callback);
 }
 
-function rando() {
+function cb() {
     console.log('callback worked');
 }
 
 function college_label() {
-  var labels = listLabels();
-  console.log(labels)
-
+  var labelArray = listLabels();
+  console.log(labelArray)
+  createLabel('me', 'test', cb);
   //var keys = Object.keys(labels)
   //console.log(keys)
   
@@ -229,19 +229,23 @@ function college_label() {
   
   
   
+<<<<<<< HEAD
   for(var key in labels) {
     console.log('hello')
+=======
+  for(var key in labelArray) {
+>>>>>>> d2ef22856e390044f8958deb9a5f0d09af062986
     console.log(key)
     if (key == "College") {
       College = true;
-      CollegeID = labels[key];
+      CollegeID = labelArray[key];
       console.log('found a label named college')
       break;
     }
   }
 
   if (College == false) {
-    createLabel("me","College", rando());
+    createLabel("me","College", cb());
     console.log("Lable Created");
     // college_label();
   } else {
