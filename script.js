@@ -191,10 +191,7 @@ function modifyMessage(userId, messageId, labelsToAdd, labelsToRemove) {
 /**
  * Add a new Label to user's mailbox.
  *
- * @param  {String} userId User's email address. The special value 'me'
- * can be used to indicate the authenticated user.
- * @param  {String} newLabelName Name of the new Label.
- * @param  {Function} callback Function to call when the request is complete.
+ * 
  */
 function createLabel(userId, newLabelName) {
   var request = gapi.client.gmail.users.labels.create({
