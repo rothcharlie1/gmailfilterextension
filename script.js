@@ -27,8 +27,9 @@ function main() {
   // listLabels();
   college_label();
   console.log(listMessages('me', searchTerm));
-  console.log(CollegeID)
   console.log(labelNames);
+  console.log(labelNames.College)
+
 }
 
 
@@ -212,6 +213,7 @@ function cb() {
 
 function college_label() {
   var labelArray = listLabels();
+  CollegeID = labelArray['College']
   console.log(labelArray);
   //var keys = Object.keys(labels)
   //console.log(keys)
