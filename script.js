@@ -31,7 +31,7 @@ function main() {
   listLabels();
   // college_label();
   console.log(listMessages('me', searchTerm));
-  console.log(labelNames);
+  // console.log(labelNames);
   console.log(labelNames['College']);
   CollegeID = labelNames.College;
   console.log(CollegeID);
@@ -182,8 +182,7 @@ function logResult(result) {
   console.log(result);
   console.log(result['length']);
   for (var i = 0; i < result['length']; i++) {
-    modifyMessage('me', result[i]['id'],  'Label_38', 'INBOX');
-    console.log('It\' working');
+    //modifyMessage('me', result[i]['id'], labelNames['College'], 'INBOX');
   }
 }
 /**
@@ -196,12 +195,12 @@ function logResult(result) {
 * @param  {Array} labelsToRemove Array of Labels to remove.
 * @param  {Function} callback Function to call when the request is complete.
 */
-function modifyMessage(userId, messageId, labelsToAdd) {
+function modifyMessage(userId, messageId, labelsToAdd, labelsToRemove) {
   var request = gapi.client.gmail.users.messages.modify({
     'userId': userId,
     'id': messageId,
     'addLabelIds': labelsToAdd,
-    // 'removeLabelIds': labelsToRemove
+    'removeLabelIds': labelsToRemove
   });
   request.execute(); // You might have to comment this out, we are figuring it out
 }
