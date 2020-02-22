@@ -240,7 +240,7 @@ function college_label() {
   }
 
   if (College == false) {
-    createLabel("me","College", rando());
+    createLabel("me","College", cb());
     console.log("Lable Created");
     // college_label();
   } else {
