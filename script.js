@@ -17,7 +17,7 @@ var labelNames = {};
 var idList = [];
 var CollegeID = "";
 var SavedID = {};
-// var College = false;
+var College = false;
 
 var searchTerm = 'from:.edu';
 
@@ -189,13 +189,13 @@ function modifyMessage(userId, messageId, labelsToAdd, labelsToRemove) {
 }
 
 /**
-* Add a new Label to user's mailbox.
-*
-* @param  {String} userId User's email address. The special value 'me'
-* can be used to indicate the authenticated user.
-* @param  {String} newLabelName Name of the new Label.
-* @param  {Function} callback Function to call when the request is complete.
-*/
+ * Add a new Label to user's mailbox.
+ *
+ * @param  {String} userId User's email address. The special value 'me'
+ * can be used to indicate the authenticated user.
+ * @param  {String} newLabelName Name of the new Label.
+ * @param  {Function} callback Function to call when the request is complete.
+ */
 function createLabel(userId, newLabelName, callback) {
   var request = gapi.client.gmail.users.labels.create({
     'userId': userId,
@@ -217,34 +217,34 @@ function college_label() {
   //var keys = Object.keys(labels)
   //console.log(keys)
   
-  try {
-    window.CollegeID = labels['College'];
-    console.log('Label Exists');
-    console.log(window.CollegeID)
-  } catch {
-    createLabel('me', 'College', cb);
-    console.log('Label Created');
-    college_label();
+  // try {
+  //   window.CollegeID = labels['College'];
+  //   console.log('Label Exists');
+  //   console.log(window.CollegeID)
+  // } catch {
+  //   createLabel('me', 'College', rando);
+  //   console.log('Label Created');
+  //   college_label();
+  // }
+  
+  
+  
+  for(var key in labels) {
+    console.log(key)
+    if (key == "College") {
+      College = true;
+      CollegeID = labels[key];
+      console.log('found a label named college')
+      break;
+    }
   }
-  
-  
-  
-//   for(var key in labels) {
-//     console.log(key)
-//     if (key == "College") {
-//       College = true;
-//       CollegeID = labels[key];
-//       console.log('found a label named college')
-//       break;
-//     }
-//   }
 
-//   if (College == false) {
-//     console.log("Lable Created");
-//     createLabel(userId = "me", newLabelName = "College");
-//     // college_label();
-//   } else {
-//     console.log("Label Exists");
-//   }
+  if (College == false) {
+    createLabel("me","College", rando());
+    console.log("Lable Created");
+    // college_label();
+  } else {
+    console.log("Label Exists");
+  }
 
 }
