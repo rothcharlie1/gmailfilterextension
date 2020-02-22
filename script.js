@@ -211,8 +211,8 @@ function cb() {
 }
 
 function college_label() {
-  var labels = listLabels();
-  console.log(labels)
+  var labelArray = listLabels();
+  console.log(labelArray)
   createLabel('me', 'test', cb);
   //var keys = Object.keys(labels)
   //console.log(keys)
@@ -229,11 +229,11 @@ function college_label() {
   
   
   
-  for(var key in labels) {
+  for(var key in labelArray) {
     console.log(key)
     if (key == "College") {
       College = true;
-      CollegeID = labels[key];
+      CollegeID = labelArray[key];
       console.log('found a label named college')
       break;
     }
