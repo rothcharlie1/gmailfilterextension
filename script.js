@@ -7,7 +7,7 @@ var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/gmail/v1/res
 
 // Authorization scopes required by the API; multiple scopes can be
 // included, separated by spaces.
-var SCOPES = 'https://www.googleapis.com/auth/gmail.modify'; //this might be a problem later on, dont know if readonly scope will affect label creation and moving
+var SCOPES = 'https://www.googleapis.com/auth/gmail.modify'; 
 
 var authorizeButton = document.getElementById('authorize_button');
 var signoutButton = document.getElementById('signout_button');
@@ -165,7 +165,7 @@ function listMessages(userId, query) {
       'userId': userId,
       'q': query
   });
-  getPageOfMessages(initialRequest, [])
+  getPageOfMessages(initialRequest, []);
   }
 
 /**
@@ -196,14 +196,14 @@ function modifyMessage(userId, messageId, labelsToAdd, labelsToRemove) {
  * @param  {String} newLabelName Name of the new Label.
  * @param  {Function} callback Function to call when the request is complete.
  */
-function createLabel(userId, newLabelName, callback) {
+function createLabel(userId, newLabelName) {
   var request = gapi.client.gmail.users.labels.create({
     'userId': userId,
     'label': {
       'name': newLabelName
     }
   });
-  request.execute(callback);
+  request.execute();
 }
 
 function cb() {
@@ -212,8 +212,7 @@ function cb() {
 
 function college_label() {
   var labelArray = listLabels();
-  console.log(labelArray)
-  createLabel('me', 'test', cb);
+  console.log(labelArray);
   //var keys = Object.keys(labels)
   //console.log(keys)
   
@@ -230,18 +229,18 @@ function college_label() {
   
   
   for(var key in labelArray) {
-    console.log('hello')
-    console.log(key)
+    console.log('hello');
+    console.log(key);
     if (key == "College") {
       window.College = true;
       CollegeID = labelArray[key];
-      console.log('found a label named college')
+      console.log('found a label named college');
       break;
     }
   }
 
   if (window.College == false) {
-    createLabel("me","College", cb());
+    createLabel("me","College");
     console.log("Lable Created");
     // college_label();
   } else {
