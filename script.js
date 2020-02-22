@@ -229,12 +229,8 @@ function college_label() {
   
   
   
-<<<<<<< HEAD
-  for(var key in labels) {
-    console.log('hello')
-=======
   for(var key in labelArray) {
->>>>>>> d2ef22856e390044f8958deb9a5f0d09af062986
+    console.log('hello')
     console.log(key)
     if (key == "College") {
       College = true;
