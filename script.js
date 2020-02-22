@@ -232,14 +232,14 @@ function college_label() {
   for(var key in labelArray) {
     console.log(key)
     if (key == "College") {
-      College = true;
+      window.College = true;
       CollegeID = labelArray[key];
       console.log('found a label named college')
       break;
     }
   }
 
-  if (College == false) {
+  if (window.College == false) {
     createLabel("me","College", cb());
     console.log("Lable Created");
     // college_label();
