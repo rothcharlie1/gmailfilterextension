@@ -18,6 +18,10 @@ var idList = [];
 var CollegeID = "";
 var SavedID = {};
 var College = false;
+var test = {
+  name: 'Matt',
+  age: 18
+};
 
 var searchTerm = 'from:.edu';
 
@@ -28,8 +32,10 @@ function main() {
   college_label();
   console.log(listMessages('me', searchTerm));
   console.log(labelNames);
-  CollegeID = labelNames.INBOX
-  console.log(CollegeID)
+  CollegeID = labelNames.INBOX;
+  console.log(CollegeID);
+  console.log(test.name);
+  console.log(test);
 
 }
 
