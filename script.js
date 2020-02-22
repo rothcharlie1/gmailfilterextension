@@ -28,7 +28,8 @@ function main() {
   college_label();
   console.log(listMessages('me', searchTerm));
   console.log(labelNames);
-  console.log(labelNames.College)
+  CollegeID = labelNames.College
+  console.log(CollegeID)
 
 }
 
