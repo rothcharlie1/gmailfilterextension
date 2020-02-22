@@ -32,6 +32,7 @@ function main() {
   college_label();
   console.log(listMessages('me', searchTerm));
   console.log(labelNames);
+  console.log(labelNames.INBOX)
   CollegeID = labelNames.INBOX;
   console.log(CollegeID);
   console.log(test.name);
