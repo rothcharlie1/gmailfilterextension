@@ -37,6 +37,7 @@ function main() {
   console.log(CollegeID);
   console.log(test)
   console.log(test.name);
+  college_label();
 
 }
 
@@ -210,13 +211,13 @@ function modifyMessage(userId, messageId, labelsToAdd, labelsToRemove) {
  *
  * 
  */
-function createLabel(userId, newLabelName) {
+function createLabel(newLabelName) {
   var request = gapi.client.gmail.users.labels.create({
-    'userId': userId,
-    'label': {
-      'name': newLabelName,
+    'userId': 'me' ,
+    'label' : {
       'labelListVisibility': 'labelShow',
-      'messageListVisibility': 'show'
+      'messageListVisibility': 'show',
+      'name': newLabelName
     }
   });
   request.execute();
@@ -239,9 +240,9 @@ function college_label() {
   //   console.log('Label Exists');
   //   console.log(window.CollegeID)
   // } catch {
-  //   createLabel('me', 'College', rando);
+  //   createLabel('College');
   //   console.log('Label Created');
-  //   college_label();
+  //   // college_label();
   // }
   
   
