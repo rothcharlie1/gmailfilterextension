@@ -34,7 +34,6 @@ function main() {
   console.log(CollegeID);
   createLabel('wtf google');
   college_label();
-
 }
 
 
@@ -214,7 +213,6 @@ function createLabel(newLabelName) {
       'name': newLabelName,
       'labelListVisibility': 'labelShow',
       'messageListVisibility': 'show',
-      'name': newLabelName
     }
   });
   request.execute();
