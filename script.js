@@ -18,10 +18,7 @@ var idList = [];
 var CollegeID = "";
 var SavedID = {};
 var College = false;
-var test = {
-  name: 'Matt',
-  age: 18
-};
+
 
 var searchTerm = 'from:.edu';
 
@@ -35,9 +32,7 @@ function main() {
   console.log(labelNames['College']);
   CollegeID = labelNames.College;
   console.log(CollegeID);
-  console.log(test)
-  console.log(test.name);
-
+  createLabel('me', 'wtf google');
 }
 
 
@@ -213,7 +208,7 @@ function modifyMessage(userId, messageId, labelsToAdd, labelsToRemove) {
 function createLabel(userId, newLabelName) {
   var request = gapi.client.gmail.users.labels.create({
     'userId': userId,
-    'label': {
+    'resource': {
       'name': newLabelName,
       'labelListVisibility': 'labelShow',
       'messageListVisibility': 'show'
