@@ -30,9 +30,9 @@ function main() {
   console.log(listMessages('me', searchTerm));
   // console.log(labelNames);
   console.log(labelNames['College']);
-  CollegeID = labelNames.College;
+  window.CollegeID = window.labelNames.College;
   console.log(CollegeID);
-  createLabel('wtf google');
+  createLabel('College');
   college_label();
 }
 
@@ -175,6 +175,8 @@ function listMessages(userId, query) {
 
 function logResult(result) {
   console.log(labelNames['College']);
+  window.CollegeID = labelNames['College'];
+  console.log(CollegeID)
   console.log(result);
   console.log(result['length']);
   for (var i = 0; i < result['length']; i++) {
