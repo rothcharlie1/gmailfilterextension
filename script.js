@@ -190,6 +190,7 @@ function modifier(){
       setTimeout(modifier, 10);
     } else {
       console.log('Done');
+    }
 
 
   // for (var i = 0; i < idList['length']; i++) {
