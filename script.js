@@ -184,21 +184,12 @@ function logResult(result) {
 }
 
 function modifier(){
-  try{
     modifyMessage('me', idList[x]['id'], labelNames['College']);
-    // gapi.open("POST", )
     x+=1;
     if(x < idList['length']) {
       setTimeout(modifier, 10);
-      // console.log(x + ' Did Work')
     } else {
       console.log('Done');
-    }
-  } catch {
-    x-=1;
-    // setTimeout(modifier,20)
-    console.log(x + ' Did not work')
-  }
 
 
   // for (var i = 0; i < idList['length']; i++) {
