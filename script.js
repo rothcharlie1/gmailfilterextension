@@ -14,10 +14,11 @@ var signoutButton = document.getElementById('signout_button');
 
 var FromList = {};
 var labelNames = {};
-var idList = [];
+var idList = {};
 var CollegeID = "";
 var SavedID = {};
 var College = false;
+var x = 0;
 
 
 var searchTerm = 'from:.edu';
@@ -175,11 +176,27 @@ function logResult(result) {
   console.log(labelNames['College']);
   window.CollegeID = labelNames['College'];
   console.log(CollegeID)
-  console.log(result);
+  // console.log(result);
   console.log(result['length']);
-  for (var i = 0; i < result['length']; i++) {
-    modifyMessage('me', result[i]['id'], labelNames['College']);
+  idList = result
+  console.log(idList)
+  modifier();
+}
+
+function modifier(){
+  modifyMessage('me', idList[x]['id'], labelNames['College']);
+  x+=1;
+  if(x < idList['length']) {
+    setTimeout(modifier, 50);
+  } else {
+    console.log('Done');
   }
+
+
+  // for (var i = 0; i < idList['length']; i++) {
+  //   setTimeout(console.log('Hello'), 1000)
+    // setTimeout(modifyMessage('me', result[i]['id'], labelNames['College']), 20);
+  // }
 }
 /**
 * Modify the Labels a Message is associated with.
@@ -215,6 +232,7 @@ function createLabel(newLabelName) {
       'messageListVisibility': 'show',
     }
   });
+  listLabels();
   request.execute();
 }
 
