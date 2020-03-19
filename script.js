@@ -32,7 +32,6 @@ function main() {
   console.log(labelNames['College']);
   CollegeID = labelNames.College;
   console.log(CollegeID);
-  createLabel('wtf google');
   college_label();
 }
 
