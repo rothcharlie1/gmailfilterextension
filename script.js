@@ -223,8 +223,7 @@ function modifyMessage(userId, messageId, labelsToAdd) {
     'addLabelIds': labelsToAdd,
     //'removeLabelIds': labelsToRemove
   });
-  var cache = request.execute();
-  console.log(typeof cache); // You might have to comment this out, we are figuring it out
+  request.execute(); // You might have to comment this out, we are figuring it out
 }
 
 /**
