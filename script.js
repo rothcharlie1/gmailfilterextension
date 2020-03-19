@@ -184,12 +184,19 @@ function logResult(result) {
 }
 
 function modifier(){
-  modifyMessage('me', idList[x]['id'], labelNames['College']);
-  x+=1;
-  if(x < idList['length']) {
-    setTimeout(modifier, 100);
-  } else {
-    console.log('Done');
+  try{
+    modifyMessage('me', idList[x]['id'], labelNames['College']);
+    x+=1;
+    if(x < idList['length']) {
+      setTimeout(modifier, 20);
+      console.log(x + ' Did Work')
+    } else {
+      console.log('Done');
+    }
+  } catch {
+    x-=1;
+    // setTimeout(modifier,20)
+    console.log(x + ' Did not work')
   }
 
 
