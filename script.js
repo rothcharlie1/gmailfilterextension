@@ -187,7 +187,7 @@ function modifier(){
     modifyMessage('me', idList[x]['id'], labelNames['College']);
     x+=1;
     if(x < idList['length']) {
-      setTimeout(modifier, 10);
+      setTimeout(modifier, 100);
     } else {
       console.log('Done');
     }
