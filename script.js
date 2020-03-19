@@ -186,7 +186,7 @@ function logResult(result) {
 function modifier(){
   try{
     modifyMessage('me', idList[x]['id'], labelNames['College']);
-    gapi.open("POST", )
+    // gapi.open("POST", )
     x+=1;
     if(x < idList['length']) {
       setTimeout(modifier, 10);
