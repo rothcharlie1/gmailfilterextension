@@ -230,15 +230,15 @@ function college_label() {
   console.log(keys)
   //console.log(keys)
   
-  // try {
-  //   window.CollegeID = labels['College'];
-  //   console.log('Label Exists');
-  //   console.log(window.CollegeID)
-  // } catch {
-  //   createLabel('College');
-  //   console.log('Label Created');
-  //   // college_label();
-  // }
+  try {
+    window.CollegeID = labels['College'];
+    console.log('Label Exists');
+    console.log(window.CollegeID)
+  } catch {
+    createLabel('College');
+    console.log('Label Created');
+    // college_label();
+  }
   
   
   
