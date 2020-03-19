@@ -194,11 +194,9 @@ function logResult(result) {
 function modifyMessage(userId, messageId, labelsToAdd) {
   var request = gapi.client.gmail.users.messages.modify({
     'userId': userId,
-    'resource': {
-      'id': messageId,
-      'addLabelIds': labelsToAdd,
-      //'removeLabelIds': labelsToRemove
-    }  
+    'id': messageId,
+    'addLabelIds': labelsToAdd,
+    //'removeLabelIds': labelsToRemove
   });
   request.execute(); // You might have to comment this out, we are figuring it out
 }
