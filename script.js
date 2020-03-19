@@ -116,13 +116,13 @@ function listLabels() {
     'userId': 'me'
   }).then(function(response) {
     var labels = response.result.labels;
-    appendPre('Labels:');
+    // appendPre('Labels:');
 
     if (labels && labels.length > 0) {
       for (i = 0; i < labels.length; i++) {
         var label = labels[i];
         labelNames[label.name] = label.id;
-        appendPre(label.name);
+        // appendPre(label.name);
       }
     } else {
       appendPre('No Labels found.');
@@ -187,7 +187,7 @@ function modifier(){
   modifyMessage('me', idList[x]['id'], labelNames['College']);
   x+=1;
   if(x < idList['length']) {
-    setTimeout(modifier, 50);
+    setTimeout(modifier, 25);
   } else {
     console.log('Done');
   }
