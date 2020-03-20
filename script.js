@@ -19,6 +19,7 @@ var CollegeID = "";
 var SavedID = {};
 var College = false;
 var x = 0;
+var pause = 0;
 
 
 var searchTerm = 'from:.edu';
@@ -185,13 +186,16 @@ function logResult(result) {
 
 function modifier(){
     modifyMessage('me', idList[x]['id'], labelNames['College']);
+    console.log(x + ' message modified')
     x+=1;
-    if(x < idList['length']) {
-      setTimeout(modifier, 100);
+    pause+=1;
+    if(x < idList['length'] && pause%30==0) {
+      setTimeout(modifier, 3000);
+    } else if(x < idList['length'] && pause%30!=0) {
+      modifier();
     } else {
       console.log('Done');
     }
-
 
   // for (var i = 0; i < idList['length']; i++) {
   //   setTimeout(console.log('Hello'), 1000)
