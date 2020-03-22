@@ -189,9 +189,9 @@ function modifier(){
     console.log(x + ' message modified')
     x+=1;
     pause+=1;
-    if(x < idList['length'] && pause%30==0) {
-      setTimeout(modifier, 3000);
-    } else if(x < idList['length'] && pause%30!=0) {
+    if(x < idList['length'] && pause%10==0) {
+      setTimeout(modifier, 1500);
+    } else if(x < idList['length'] && pause%10!=0) {
       modifier();
     } else {
       console.log('Done');
